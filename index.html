@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omnix - AI Virtual Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Omnix - Your AI-powered virtual assistant for stocks, reminders, and more">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Floating Icons - Left Side -->
+    <div class="floating-icons-left">
+        <a href="https://github.com" target="_blank" class="floating-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="floating-icon" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://discord.com" target="_blank" class="floating-icon" title="Discord">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://reddit.com" target="_blank" class="floating-icon" title="Reddit">
+            <i class="fab fa-reddit"></i>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="floating-icon" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://twitch.tv" target="_blank" class="floating-icon" title="Twitch">
+            <i class="fab fa-twitch"></i>
+        </a>
+    </div>
+
+    <!-- Floating Icons - Right Side -->
+    <div class="floating-icons-right">
+        <a href="https://linkedin.com" target="_blank" class="floating-icon" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="floating-icon" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me" target="_blank" class="floating-icon" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://pinterest.com" target="_blank" class="floating-icon" title="Pinterest">
+            <i class="fab fa-pinterest"></i>
+        </a>
+        <a href="https://tiktok.com" target="_blank" class="floating-icon" title="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://spotify.com" target="_blank" class="floating-icon" title="Spotify">
+            <i class="fab fa-spotify"></i>
+        </a>
+        <div class="commands-right">
+            <span>Try saying:</span>
+            <p>"What's the weather?"</p>
+            <p>"Set a reminder"</p>
+            <p>"Tell me a joke"</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="anime-header-container">
+            
+            <img src="voice.gif" alt="Omnix Assistant Logo" id="logo">
+        
+        </div>
+        <h1>Welcome to <span id="name">Omnix</span>, Your <span id="va">AI Assistant</span></h1>
+        
+      <div class="voice-section">
+        <div id="listening" class="listening-indicator">Listening...</div>
+        <button id="btn" class="voice-btn pulse-animation">
+            <div class="mic-icon-wrapper">
+                <img src="mic.svg" alt="microphone" width="30px">
+            </div>
+            <span>Speak with Omnix</span>
+            <div class="button-gradient"></div>
+        </button>
+    </div>
+    <div class="stock-checker-card">
+        <div class="stock-card-header">
+            <i class="fas fa-chart-line"></i>
+            <div>
+                <h2>Real-Time Stock Price Checker</h2>
+                <p class="subtitle">Get instant, live updates for any stock symbol</p>
+            </div>
+        </div>
+        <div class="input-group">
+            <input type="text" id="symbol" placeholder="Enter Stock Symbol (e.g., AAPL)" autocomplete="off">
+            <button onclick="getStockData()" class="primary-btn">
+                <span id="stock-btn-text">Check Price</span>
+                <span id="stock-loader" class="loader" style="display:none;"></span>
+            </button>
+        </div>
+        <div id="stockInfo" class="stock-info neutral">Enter a stock symbol above ☝️</div>
+    </div>
+   
+    
+    <section id="features">
+        <h2>Features & Capabilities</h2>
+        <div class="features-grid">
+            <div class="card feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI-Powered Assistant</h3>
+                <p>Get intelligent responses and natural conversations powered by advanced AI. Ask anything, anytime.</p>
+            </div>
+            <div class="card feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>Real-Time Stock Tracking</h3>
+                <p>Track stocks, get market insights, and receive price alerts. Just ask "How's AAPL doing?"</p>
+            </div>
+            <div class="card feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Instant Answers</h3>
+                <p>Get accurate, real-time answers to any question. Powered by extensive knowledge base.</p>
+            </div>
+            <div class="card feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <h3>Control Your Devices</h3>
+                <p>With voice commands, Omnix can help you control smart devices.</p>
+            </div>
+            <div class="card feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Manage Your Calendar</h3>
+                <p>Omnix can sync with your calendar and remind you of meetings.</p>
+            </div>
+            <div class="card feature-card">
+                <div class="card-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+            <div class="card">
+                <h3>Play Music and Videos</h3>
+                <p>Omnix can play your favorite music or videos on request.</p>
+            </div>
+
+            <div class="card">
+                <h3>Anime Information</h3>
+                <p>Get detailed information about anime series, characters, and ratings from trusted sources.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Omnix Assistant</h3>
+                <p>Your personal AI companion for everyday tasks</p>
+                <div class="social-links">
+                  
+                    
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Use</a></li>
+                    <li><a href="#contact">Contact Us:<br>
+                        chavansrikar@gmail.com
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#feedback">Send Feedback</a></li>
+                    <li><a href="#status">System Status</a></li>
+                    <li><a href="#docs">Documentation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#newsletter">Newsletter</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2025 Omnix Assistant. All rights reserved.</p>
+                    <p>Version 1.0.0</p>
+                </div>
+                <div class="footer-bottom-right">
+                    <div class="footer-bottom-links">
+                        <a href="#privacy">Privacy</a>
+                        <a href="#terms">Terms</a>
+                        <a href="#security">Security</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>async function getStockData() {
+        const symbol = document.getElementById("symbol").value.toUpperCase(); // Convert to uppercase
+        const apiKey = "cupm3hhr01qk8dnkt0tgcupm3hhr01qk8dnkt0u0"; // Replace with your Finnhub API key
+        const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
+    
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log("API Response:", data); // Debugging
+    
+            if (data.c) { // Check if current price exists
+                const currentPrice = data.c;  // Current price
+                const prevClose = data.pc;  // Previous closing price
+                const change = (currentPrice - prevClose).toFixed(2);
+                const percentageChange = ((change / prevClose) * 100).toFixed(2);
+    
+                let message = `The current price of ${symbol} is $${currentPrice}. `;
+                if (change > 0) {
+                    message += `It has increased by ${percentageChange}%. 🚀`;
+                } else if (change < 0) {
+                    message += `It has decreased by ${Math.abs(percentageChange)}%. 📉`;
+                } else {
+                    message += `There is no change in the stock price. ⚖️`;
+                }
+    
+                document.getElementById("stockInfo").innerText = message;
+                speak(message);
+            } else {
+                document.getElementById("stockInfo").innerText = "Invalid Symbol or API Limit Reached!";
+                speak("Invalid stock symbol or API limit reached!");
+            }
+        } catch (error) {
+            console.error("Error fetching stock data:", error);
+            document.getElementById("stockInfo").innerText = "Error fetching stock data!";
+            speak("There was an error fetching the stock data.");
+        }
+    }
+    
+    // Text-to-Speech Function
+    function speak(text) {
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = "en-US";
+        speech.rate = 1;
+        speech.pitch = 1;
+        window.speechSynthesis.speak(speech);
+    }
+    
+    let lastScrollPosition = window.pageYOffset;
+    const floatingIconsLeft = document.querySelector('.floating-icons-left');
+    const floatingIconsRight = document.querySelector('.floating-icons-right');
+    const commandsLeft = document.querySelector('.commands-left');
+    const commandsRight = document.querySelector('.commands-right');
+
+    
+    window.addEventListener('scroll', () => {
+        const currentScrollPosition = window.pageYOffset;
+        
+        if (currentScrollPosition > lastScrollPosition) {
+            // Scrolling down
+            floatingIconsLeft.style.transform = 'translateY(-100%)';
+            floatingIconsRight.style.transform = 'translateY(-100%)';
+            commandsLeft.style.transform = 'translateY(-30px)';
+            commandsRight.style.transform = 'translateY(-30px)';
+        } else {
+            // Scrolling up
+            floatingIconsLeft.style.transform = 'translateY(0)';
+            floatingIconsRight.style.transform = 'translateY(0)';
+            commandsLeft.style.transform = 'translateY(0)';
+            commandsRight.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollPosition = currentScrollPosition;
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(() => {
+            speak("Hello, I am Omnix, your virtual assistant created by team omnix. How can I assist you today?");
+        }, 1000); // Introduces itself 1 second after page loads
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
