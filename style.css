@@ -1,0 +1,1304 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-direction: column;
+    animation: fadeIn 2s ease-in-out;
+}
+#logo{
+    width: 155vw;
+    animation: fadeIn 2s ease-in-out;
+}
+h1{
+    color: rgb(249, 248, 247);
+    font-family: "Protest Guerrilla", sans-serif;
+    animation: fadeIn 2s ease-in-out;
+}
+#name{
+    color: rgba(209, 89, 14, 0.694);
+    font-size: 45px;
+}
+#va{
+    color: rgb(54, 122, 231);
+    font-size: 45px;
+}
+#listening {
+    color: rgba(248, 241, 241, 0.945);
+    font-size: 30px;
+    font-family: 'Protest Guerrilla', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+    display: none;
+}
+#btn {
+    display: flex; /* Make sure it appears */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 250px; 
+    padding: 10px;
+    background: linear-gradient(to right, rgb(227, 92, 25), rgb(53, 122, 233));
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(43, 206, 212, 0.5),
+                0 0 30px rgba(43, 206, 212, 0.3),
+                0 0 45px rgba(43, 206, 212, 0.1);
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 1; /* Ensure it's visible */
+    animation: fadeIn 3s ease-in-out forwards;
+}
+
+#btn:hover {
+    box-shadow: 0 0 20px rgba(43, 206, 212, 0.8),
+                0 0 40px rgba(43, 206, 212, 0.6),
+                0 0 60px rgba(43, 206, 212, 0.4);
+    letter-spacing: 2px;
+}
+
+#btn:active {
+    box-shadow: 0 0 25px rgba(43, 206, 212, 1),
+                0 0 50px rgba(43, 206, 212, 0.8),
+                0 0 75px rgba(43, 206, 212, 0.6);
+    transform: scale(0.95);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    justify-items: center;
+}
+
+.feature-card {
+    background: #232b39;
+    color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0,212,255,0.08), 0 1.5px 8px rgba(131,245,32,0.09);
+    padding: 2rem 1.3rem 1.3rem 1.3rem;
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    min-width: 210px;
+    max-width: 270px;
+    animation: fadeIn 1s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,212,255,0.16), 0 3px 16px rgba(131,245,32,0.15);
+    background: #25304a;
+}
+
+.feature-card .card-icon {
+    margin-bottom: 1rem;
+}
+
+.feature-card .card-icon i {
+    font-size: 2.3rem;
+    color: #83f520;
+    background: rgba(131,245,32,0.09);
+    border-radius: 50%;
+    padding: 0.6rem;
+    box-shadow: 0 2px 8px rgba(131,245,32,0.08);
+}
+
+.feature-card h3 {
+    color: #00d4ff;
+    font-size: 1.18rem;
+    margin-bottom: 0.7rem;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.feature-card p {
+    color: #b3e5fc;
+    font-size: 1rem;
+    margin-bottom: 0;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+@media (max-width: 700px) {
+    .features-grid {
+        gap: 1rem;
+    }
+    .feature-card {
+        padding: 1.2rem 0.8rem;
+    }
+}
+
+/* Floating Social Icons */
+.floating-icons-left,
+.floating-icons-right {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.floating-icons-left {
+    left: 20px;
+    animation: floatLeft 3s ease-in-out infinite;
+}
+
+.floating-icons-right {
+    right: 20px;
+    text-align: right;
+    animation: floatRight 3s ease-in-out infinite;
+}
+
+.floating-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.9;
+    cursor: pointer;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.floating-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: rgba(209, 89, 14, 0.8);
+    box-shadow: 0 8px 25px rgba(209, 89, 14, 0.3);
+    color: #fff;
+}
+
+/* Floating icons positioning */
+.floating-icons-left {
+    left: 20px;
+}
+
+.floating-icons-right {
+    right: 20px;
+}
+
+/* Commands box */
+.commands-right {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.floating-icons-right:hover .commands-right {
+    display: block;
+}
+
+.commands-right span {
+    color: #fff;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Protest Guerrilla', sans-serif;
+    font-size: 0.9rem;
+}
+
+.commands-right p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 8px 0;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.commands-right p:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Hide on mobile */
+@media (max-width: 1024px) {
+    .floating-icons-left,
+    .floating-icons-right {
+        display: none;
+    }
+}
+
+/* Hover effects */
+.floating-icon:hover {
+    transform: translateY(-5px) scale(1.15);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Icon specific colors */
+.floating-icon i.fa-github { color: #ffffff; }
+.floating-icon i.fa-twitter { color: #1DA1F2; }
+.floating-icon i.fa-discord { color: #7289DA; }
+.floating-icon i.fa-reddit { color: #FF4500; }
+.floating-icon i.fa-youtube { color: #FF0000; }
+.floating-icon i.fa-twitch { color: #9146FF; }
+.floating-icon i.fa-linkedin-in { color: #0077B5; }
+.floating-icon i.fa-instagram { 
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.floating-icon i.fa-whatsapp { color: #25D366; }
+.floating-icon i.fa-pinterest { color: #E60023; }
+.floating-icon i.fa-tiktok { 
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+.floating-icon i.fa-spotify { color: #1DB954; }
+
+/* Hover effects for icons */
+.floating-icon:hover i {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.commands-right {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 200px;
+    display: none;
+}
+
+.commands-right span {
+    color: rgba(209, 89, 14, 0.8);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.commands-right p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 5px 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.commands-right p:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.floating-icons-right:hover .commands-right {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(10px); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(-10px); }
+}
+
+/* Hide floating icons on smaller screens */
+@media (max-width: 1024px) {
+    .floating-icons-left,
+    .floating-icons-right {
+        display: none;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- Stock Checker Card --- */
+.stock-checker-card {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem 1.5rem;
+    background: #181f2a;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,212,255,0.10), 0 1.5px 8px rgba(0, 255, 132, 0.09);
+    border: 2px solid #00d4ff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    animation: fadeIn 1s;
+}
+.stock-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+.stock-card-header i {
+    font-size: 2.2rem;
+    color: #00d4ff;
+    background: rgba(0,212,255,0.10);
+    border-radius: 50%;
+    padding: 0.7rem;
+    box-shadow: 0 2px 8px rgba(0,212,255,0.08);
+}
+.stock-checker-card h2 {
+    margin: 0;
+    color: #00d4ff;
+    font-size: 1.6rem;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+.stock-checker-card .subtitle {
+    color: #8be9fd;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+.stock-checker-card .input-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+.stock-checker-card input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #00d4ff;
+    border-radius: 6px;
+    background: #232b39;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+.stock-checker-card input:focus {
+    border-color: #83f520;
+}
+.stock-checker-card .primary-btn {
+    background: linear-gradient(45deg, #00d4ff, #83f520);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative;
+}
+.stock-checker-card .primary-btn:hover {
+    background: linear-gradient(45deg, #83f520, #00d4ff);
+    transform: scale(1.07);
+}
+.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #00d4ff;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-left: 0.3rem;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.stock-info {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 10px;
+    border-radius: 7px;
+    display: inline-block;
+    width: 100%;
+    background: #232b39;
+    color: #b3e5fc;
+    box-shadow: 0 1px 4px rgba(0,212,255,0.07);
+    min-height: 40px;
+    transition: background 0.25s, color 0.25s;
+    word-break: break-word;
+}
+.stock-info.profit {
+    color: #1ed760;
+    background: rgba(30, 215, 96, 0.08);
+}
+.stock-info.loss {
+    color: #ff5e5e;
+    background: rgba(255, 94, 94, 0.08);
+}
+.stock-info.neutral {
+    color: #b3e5fc;
+    background: #232b39;
+}
+/* --- End Stock Checker Card --- */
+
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 255, 132, 0.2);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #00d4ff;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #00d4ff;
+    border-radius: 5px;
+    background: #2b2b2b;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+button {
+    width: 85%;
+    padding: 10px;
+    background: linear-gradient(45deg, #00d4ff, #0091ff);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0091ff, #00d4ff);
+    transform: scale(1.05);
+}
+
+.stock-info {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.profit {
+    color: #00ff00;
+    background: rgba(0, 255, 0, 0.2);
+    border: 2px solid #00ff00;
+}
+
+.loss {
+    color: #ff3333;
+    background: rgba(250, 66, 4, 0.2);
+    border: 2px solid #ff3333;
+}
+
+.neutral {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid #ffffff;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glowing border effect on hover */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(70, 225, 18, 0.8) !important;
+}
+
+/* Card title styles */
+.card h3 {
+    color: rgb(65, 131, 218) !important;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Card description text styles */
+.card p {
+    color: rgb(0, 0, 0) !important;
+    font-size: 16px;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Floating Icons at Sides */
+.floating-icons-left,
+.floating-icons-right {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.floating-icons-left {
+    left: 15px;
+    animation: floatLeft 3s ease-in-out infinite;
+}
+
+.floating-icons-right {
+    right: 15px;
+    animation: floatRight 3s ease-in-out infinite;
+}
+
+/* Icon Styling */
+.floating-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.floating-icon img {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.floating-icon:hover {
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Animation Keyframes */
+@keyframes floatLeft {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-50%) translateX(10px);
+    }
+}
+
+@keyframes floatRight {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-50%) translateX(-10px);
+    }
+}
+
+/* Scroll behavior */
+.scroll-up {
+    transform: translateY(-30px);
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-icons-left,
+    .floating-icons-right {
+        display: none;
+    }
+}
+
+/* Animation for smooth transitions */
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.floating-icon {
+    animation: slideIn 0.5s ease-out forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+/* Main GIF/Logo Animation */
+#logo {
+    width: 500px;
+    height: 500px;
+    margin: 30px auto;
+    display: block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Tooltip for icons */
+.floating-icon {
+    position: relative;
+}
+
+.floating-icon::after {
+    content: attr(title);
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-icons-left .floating-icon::after {
+    left: 120%;
+}
+
+.floating-icons-right .floating-icon::after {
+    right: 120%;
+}
+
+.floating-icon:hover::after {
+    opacity: 1;
+}
+
+/* Center content and button styling */
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: linear-gradient(45deg, #aae52b, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(120, 203, 5, 0.3);
+}
+
+#btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(209, 97, 36, 0.4);
+}
+
+/* Voice Button Styling */
+.voice-section {
+    width: 95%;  /* Increased from 90% */
+    max-width: 700px;  /* Increased from 800px */
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.voice-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 7.8rem 6rem;  /* Increased padding for larger button */
+    width: 100%;
+    min-width: 700px;  /* Increased minimum width */
+    border-radius: 60px;  /* Slightly increased border radius */
+    background: linear-gradient(
+        45deg,
+        #2196F3,
+        #00BCD4,
+        #3F51B5,
+        #2196F3
+    );
+    background-size: 300% 300%;
+    border: 4px solid rgba(255, 255, 255, 0.2);  /* Slightly thicker border */
+    cursor: pointer;
+    transition: all 0.4s ease;
+    font-size: 1.6rem;  /* Increased font size */
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    overflow: hidden;
+    animation: gradientShift 8s ease infinite;
+    box-shadow: 0 8px 32px rgba(33, 150, 243, 0.3);  /* Added subtle shadow */
+}
+
+/* Updated responsive design for smaller screens */
+@media (max-width: 768px) {
+    .voice-btn {
+        min-width: unset;
+        width: 95%;
+        padding: 2rem 2.5rem;  /* Adjusted padding for mobile */
+        font-size: 1.3rem;
+        border-radius: 30px;  /* Smaller border radius for mobile */
+    }
+}
+
+.listening-indicator {
+    text-align: center;
+    margin-top: 10px;
+    color: #3498db;
+    font-weight: 500;
+    display: none;
+}
+
+.footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: rgba(248, 241, 241, 0.945);
+    padding: 4rem 0 2rem;
+    margin-top: auto;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section {
+    color: rgba(248, 241, 241, 0.945);
+}
+
+.footer-section h3 {
+    color: rgba(248, 241, 241, 0.945);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.footer-section p {
+    color: rgba(248, 241, 241, 0.8);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-section ul li a {
+    color: rgba(248, 241, 241, 0.8);
+    text-decoration: none;
+    font-family: 'Protest Guerrilla', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: rgba(248, 241, 241, 1);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(209, 89, 14, 0.694);
+    transform: translateY(-2px);
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-bottom-left p {
+    color: rgba(248, 241, 241, 0.8);
+    font-size: 0.875rem;
+    margin: 0;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.footer-bottom-right {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+    color: rgba(248, 241, 241, 0.8);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: 'Protest Guerrilla', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: rgba(248, 241, 241, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .footer-bottom-right {
+        margin-top: 1rem;
+    }
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: rgba(248, 241, 241, 0.945);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.footer-section p {
+    color: rgba(248, 241, 241, 0.8);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-section ul li a {
+    color: rgba(248, 241, 241, 0.8);
+    text-decoration: none;
+    font-family: 'Protest Guerrilla', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: rgba(248, 241, 241, 1);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: rgba(209, 89, 14, 0.694);
+    transform: translateY(-2px);
+}
+
+.social-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+.footer-bottom-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-bottom-left p {
+    color: rgba(248, 241, 241, 0.8);
+    font-size: 0.875rem;
+    margin: 0;
+    font-family: 'Protest Guerrilla', sans-serif;
+}
+
+.footer-bottom-right {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+    color: rgba(248, 241, 241, 0.8);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-family: 'Protest Guerrilla', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: rgba(248, 241, 241, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .footer-bottom-right {
+        margin-top: 1rem;
+    }
+}
+
+.footer-section h3 {
+    color: #00bcd4;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #e35c19, #357ae9);
+}
+
+.footer-section p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-links a:hover {
+    color: #00bcd4;
+    transform: translateX(5px);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: linear-gradient(45deg, #e35c19, #357ae9);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(43, 206, 212, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #888888;
+    font-size: 0.9rem;
+}
+
+/* Responsive design for footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links a {
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Add these styles for the responsive navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #4dabf7;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
