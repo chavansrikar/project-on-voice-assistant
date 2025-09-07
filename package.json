@@ -1,0 +1,15 @@
+{
+  "name": "omnix-voice-assistant",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2",
+    "nodemailer": "^6.9.4"
+  }
+  
+}
