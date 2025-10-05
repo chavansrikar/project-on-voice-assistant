@@ -70,7 +70,7 @@ This project was created for my Diploma College Project Expo (2nd Year).
 
 Team Lead & Coordinator: Chavan Srikar
 
-Team Members: [me,siddu,bharath,meheshwari,pranathi]
+Team Members: [siddu,srikar,bharath,meheshwari,pranathi]
 
 🌟 Topics
 
@@ -78,4 +78,5 @@ voice-assistant javascript html css
 nodejs speech-recognition text-to-speech
 web-speech-api frontend-project college-project
 
-⚡ With Omnix, we explored the future of voice-powered interaction and created a working prototype as part of our academic innovation journey.
+⚡ With Omnix, we explored the future of voice-powered interaction and created a working prototype as part of our academic innovation journey. we have been hosted it on render the link is https://project-on-voice-assistant-060.onrender.com/
+
