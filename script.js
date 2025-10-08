@@ -510,8 +510,8 @@ function takeCommand(message) {
         else if (message.includes("who created you")) {
             speak("I was created by team omnix, a tech enthusiast and developer.");
         } 
-        else if (message.includes("who is the founder of cosmos")) {
-            speak("The founder of Cosmoss is the one and only, Siddu.");
+        else if (message.includes("who is the founder of omnix")) {
+            speak("The founder of Cosmoss is the one and only, team omnix srikar team.");
         } 
         else if (message.includes("search news for")) {
             let query = message.replace("search news for", "").trim();
@@ -1419,3 +1419,4 @@ window.addEventListener('scroll', () => {
     lastScrollPosition = currentScrollPosition;
 });
 }
+
